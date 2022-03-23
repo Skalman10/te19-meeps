@@ -4,7 +4,13 @@
     <ul>
         {% for Body in meeps %}
         <li>
-            {{meeps.Body}}}
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+    <p class="card-text"> {{ meeps.data.Body }} </p>
+    <p class="card-text"> {{ meeps.data.created_at }} </p>
+  </div>
+</div>
         </li>
         {% endfor %}
     </ul>
