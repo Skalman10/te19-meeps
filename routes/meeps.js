@@ -5,15 +5,12 @@ const pool = require('../database');
 
 /* GET users listing. */
 router.get('/', async function(req, res, next) {
-    const flash = req.session.flash;
-    req.session.flash = null;
     await pool.promise()
         .query(`SELECT * FROM meeps`)
         .then(([rows,fields]) => {
             console.log(rows);
             res.render('meeps.njk', {
-                flash: flash,
-                Body: rows,
+                meeps: rows,
                 title: 'Meeps',
                 layout: 'layout.njk'
               });
