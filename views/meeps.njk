@@ -1,12 +1,13 @@
 {% extends layout %}
 {% block  content %}
 <main>
+      {% include 'components/meepsform.njk' %}
     <ul>
-        {% for id in meeps %}
+        {% for body in meeps %}
         <li>
 <div class="card" style="width: 18rem;">
   <div class="card-body">
-    <h6 class="card-subtitle mb-2 text-muted"> {{Body.Body}}</h6>
+    <h6 class="card-subtitle mb-2 text-muted">{{body.body}}</h6>
   </div>
 </div>
         </li>
