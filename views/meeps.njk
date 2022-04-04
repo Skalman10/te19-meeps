@@ -1,17 +1,20 @@
 {% extends layout %}
 {% block  content %}
-<main>
-      {% include 'components/meepsform.njk' %}
+  <main>
+    {% include 'components/meepsform.njk' %}
     <ul>
-        {% for body in meeps %}
+      {% for body in meeps %}
         <li>
-<div class="card" style="width: 18rem;">
-  <div class="card-body">
-    <h6 class="card-subtitle mb-2 text-muted">{{body.body}}</h6>
-  </div>
-</div>
-        </li>
-        {% endfor %}
-    </ul>
-    {% endblock %}
-</main>
+          <div class="card" style="width: 18rem;">
+            <div class="card-body">
+              <h6 class="card-subtitle mb-2 text-muted">{{ body.body }}</h6>
+            </div>
+          </div>
+        </div>
+        <a href="/meeps/{{ body.id }}/delete" class="btn btn-sm btn-danger">
+          Delete meep
+        </a>
+      </div>
+    </li>
+  {% endfor %}
+</ul>{% endblock %}</main>
