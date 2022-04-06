@@ -6,7 +6,7 @@ const pool = require('../database');
 /* GET users listing. */
 router.get('/', async function (req, res, next) {
     await pool.promise()
-        .query(`SELECT * FROM meeps`)
+        .query(`SELECT * FROM iskthl_meeps`)
         .then(([rows, fields]) => {
             console.log(rows);
             res.render('meeps.njk', {
@@ -29,7 +29,7 @@ router.post('/', async (req, res, next) => {
     const meep = req.body.body;
 
     await pool.promise()
-        .query('INSERT INTO meeps (body) VALUES (?)', [meep])
+        .query('INSERT INTO iskthl_meeps (body) VALUES (?)', [meep])
         .then((response) => {
             console.log(response[0].affectedRows);
             if (response[0].affectedRows === 1) {
@@ -64,7 +64,7 @@ router.get('/:id/delete', async (req, res, next) =>  {
         });
     }
     await pool.promise()
-        .query('DELETE FROM meeps WHERE id = ?', [id])
+        .query('DELETE FROM iskthl_meeps WHERE id = ?', [id])
         .then((response) => {
             console.log(response);
             if (response[0].affectedRows === 1) {
