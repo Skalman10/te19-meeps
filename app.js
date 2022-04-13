@@ -9,7 +9,7 @@ const sassMiddleware = require('node-sass-middleware');
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const meepsRouter = require('./routes/meeps');
-const apiRouter = require('./routes/api/index') ;
+const apiRouter = require('./routes/api') ;
 
 const app = express();
 
